@@ -14,6 +14,21 @@
     gtag('js', new Date());
     gtag('config', 'AW-16952621618');
   </script>
+  <!-- Event snippet for Перегляд сторінки conversion page -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-16952621618/bIf7CM7c-rQcELL00ZM_',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
 </head>
 <body>
 
@@ -23,7 +38,7 @@
       <h1>Перетворюйте Excel-таблиці у готові документи автоматично</h1>
       <p class="subtitle">Генерація рахунків, HR-документів, звітів та PDF — автоматично за секунди.</p>
       <div class="cta-group">
-        <a href="https://t.me/built_in_days" class="btn btn-primary" target="_blank" rel="noopener">Написати в Telegram</a>
+        <a href="https://t.me/built_in_days" class="btn btn-primary" target="_blank" rel="noopener" onclick="return gtag_report_conversion('https://t.me/built_in_days');">Написати в Telegram</a>
         <a href="mailto:zahreb.yevhen@gmail.com" class="btn btn-secondary">Надіслати Excel-файл</a>
       </div>
       <p class="note">Індивідуальні рішення з автоматизації для малого бізнесу, бухгалтерії та HR-процесів.</p>
@@ -205,7 +220,7 @@
       <h2>Отримайте індивідуальне рішення з автоматизації</h2>
       <p class="contact-note">Надішліть ваш Excel-файл або опишіть процес — я відповім із готовим рішенням.</p>
       <div class="contact-links">
-        <a href="https://t.me/built_in_days" class="btn btn-primary" target="_blank" rel="noopener">Написати в Telegram</a>
+        <a href="https://t.me/built_in_days" class="btn btn-primary" target="_blank" rel="noopener" onclick="return gtag_report_conversion('https://t.me/built_in_days');">Написати в Telegram</a>
         <a href="mailto:zahreb.yevhen@gmail.com" class="btn btn-secondary">Написати на пошту</a>
       </div>
     </div>
@@ -220,7 +235,7 @@
   </footer>
 
   <!-- Floating Telegram button -->
-  <a href="https://t.me/built_in_days" class="floating-tg" target="_blank" rel="noopener" aria-label="Telegram">
+  <a href="https://t.me/built_in_days" class="floating-tg" target="_blank" rel="noopener" aria-label="Telegram" onclick="return gtag_report_conversion('https://t.me/built_in_days');">
     <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M11.944 0A12 12 0 1 0 24 12.056A12.01 12.01 0 0 0 11.944 0Zm5.573 8.192c-.207 2.173-1.1 7.444-1.555 9.882-.193 1.032-.573 1.378-.94 1.412-.8.074-1.407-.53-2.182-1.04-1.21-.796-1.895-1.293-3.07-2.072-1.358-.9-.478-1.394.296-2.202.203-.21 3.726-3.416 3.795-3.707.009-.036.017-.172-.064-.243s-.2-.047-.285-.028c-.122.027-2.06 1.31-5.814 3.848-.55.378-1.048.562-1.494.553-.492-.01-1.438-.278-2.142-.507-.863-.282-1.55-.43-1.49-.91.031-.248.374-.503 1.03-.762 4.032-1.757 6.72-2.915 8.065-3.476 3.84-1.6 4.638-1.878 5.16-1.886.114-.002.37.026.535.16a.58.58 0 0 1 .196.37c.018.108.04.348.023.537Z"/></svg>
   </a>
 
