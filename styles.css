@@ -13,7 +13,8 @@ body {
     Ubuntu, Cantarell, sans-serif;
   color: #1a1a1a;
   background: #fff;
-  line-height: 1.6;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ── Layout ── */
@@ -25,93 +26,123 @@ body {
 }
 
 section {
-  padding: 72px 0;
+  padding: 80px 0;
 }
 
 /* ── Typography ── */
 
 h1 {
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 16px;
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+  max-width: 620px;
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: 32px;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
 }
 
 h3 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 p {
   font-size: 1.05rem;
-  color: #333;
-}
-
-/* ── Hero ── */
-
-.hero {
-  padding: 96px 0 80px;
-}
-
-.hero p.subtitle {
-  font-size: 1.2rem;
   color: #444;
-  max-width: 560px;
-  margin-bottom: 32px;
 }
 
-.hero p.note {
-  font-size: 0.95rem;
-  color: #666;
-  margin-top: 24px;
-  max-width: 520px;
-}
-
-.cta-group {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
+/* ── Buttons ── */
 
 .btn {
   display: inline-block;
-  padding: 14px 28px;
-  border-radius: 6px;
+  padding: 15px 30px;
+  border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .btn-primary {
-  background: #111;
+  background: #2563eb;
   color: #fff;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
 }
 
 .btn-primary:hover {
-  background: #333;
+  background: #1d4ed8;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
 }
 
 .btn-secondary {
-  background: #f0f0f0;
-  color: #111;
+  background: #f1f5f9;
+  color: #1a1a1a;
+  border: 1px solid #e2e8f0;
 }
 
 .btn-secondary:hover {
-  background: #e0e0e0;
+  background: #e2e8f0;
 }
 
 /* ── Gray sections ── */
 
 .bg-gray {
-  background: #f7f7f8;
+  background: #f8f9fa;
+}
+
+/* ── Hero ── */
+
+.hero {
+  padding: 100px 0 88px;
+}
+
+.hero p.subtitle {
+  font-size: 1.25rem;
+  color: #555;
+  max-width: 540px;
+  margin-bottom: 36px;
+  line-height: 1.6;
+}
+
+.hero p.note {
+  font-size: 0.92rem;
+  color: #888;
+  margin-top: 28px;
+  max-width: 520px;
+}
+
+.cta-group {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ── Section spacing helper ── */
+
+h2 + .audience-grid,
+h2 + .cards,
+h2 + .steps,
+h2 + .examples {
+  margin-top: 40px;
+}
+
+h2 + p + .trust-grid {
+  margin-top: 40px;
 }
 
 /* ── Problems ── */
@@ -119,22 +150,62 @@ p {
 .problems-list {
   list-style: none;
   display: grid;
-  gap: 16px;
+  gap: 18px;
+  margin-top: 36px;
 }
 
 .problems-list li {
   position: relative;
-  padding-left: 28px;
+  padding-left: 32px;
   font-size: 1.05rem;
-  color: #333;
+  color: #444;
+  line-height: 1.5;
 }
 
 .problems-list li::before {
   content: "\2715";
   position: absolute;
   left: 0;
-  color: #c0392b;
+  top: 1px;
+  color: #dc2626;
   font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ── Who is this for ── */
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.audience-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 28px 22px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.audience-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.audience-icon {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.audience-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.audience-card p {
+  font-size: 0.93rem;
+  color: #666;
+  line-height: 1.5;
 }
 
 /* ── Solutions cards ── */
@@ -147,18 +218,62 @@ p {
 
 .card {
   background: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
-  padding: 28px 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 30px 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
 .card h3 {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .card p {
   font-size: 0.95rem;
-  color: #555;
+  color: #666;
+}
+
+/* ── Examples ── */
+
+.examples {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.example {
+  background: #f0f5ff;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+  padding: 28px 22px;
+  transition: transform 0.2s;
+}
+
+.example:hover {
+  transform: translateY(-2px);
+}
+
+.example-number {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+}
+
+.example p {
+  font-size: 0.97rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.example p strong {
+  color: #111;
 }
 
 /* ── Steps ── */
@@ -167,25 +282,20 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  counter-reset: step;
-}
-
-.step {
-  counter-increment: step;
 }
 
 .step-number {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: #111;
+  background: #2563eb;
   color: #fff;
   font-weight: 700;
   font-size: 1rem;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .step p {
@@ -193,17 +303,62 @@ p {
   color: #444;
 }
 
+/* ── Trust ── */
+
+.trust-subtitle {
+  color: #666;
+  margin-bottom: 8px;
+  max-width: 500px;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.trust-item {
+  text-align: center;
+  padding: 24px 12px;
+}
+
+.trust-icon {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.trust-item h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.trust-item p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
 /* ── Contact ── */
 
-.contact-section p.contact-note {
+.contact-section {
+  background: #f0f5ff;
+  border-top: 1px solid #dbeafe;
+  border-bottom: 1px solid #dbeafe;
+}
+
+.contact-section h2 {
+  margin-bottom: 12px;
+}
+
+.contact-note {
   color: #555;
-  margin-bottom: 28px;
-  max-width: 480px;
+  margin-bottom: 32px;
+  max-width: 500px;
+  line-height: 1.6;
 }
 
 .contact-links {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
@@ -211,8 +366,8 @@ p {
 
 footer {
   background: #111;
-  color: #aaa;
-  padding: 36px 0;
+  color: #999;
+  padding: 40px 0;
   text-align: center;
   font-size: 0.9rem;
 }
@@ -220,27 +375,72 @@ footer {
 footer strong {
   color: #fff;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   font-size: 1rem;
+}
+
+footer p {
+  color: #999;
+}
+
+/* ── Floating Telegram ── */
+
+.floating-tg {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 56px;
+  height: 56px;
+  background: #2563eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 100;
+}
+
+.floating-tg:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(37, 99, 235, 0.5);
 }
 
 /* ── Responsive ── */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
+  .audience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .examples {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
   h1 {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
   }
 
   h2 {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
   }
 
   section {
-    padding: 52px 0;
+    padding: 56px 0;
   }
 
   .hero {
-    padding: 64px 0 56px;
+    padding: 72px 0 60px;
+  }
+
+  .audience-grid {
+    grid-template-columns: 1fr;
   }
 
   .cards {
@@ -251,6 +451,16 @@ footer strong {
     grid-template-columns: 1fr;
   }
 
+  .trust-grid {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .trust-item {
+    text-align: left;
+    padding: 16px 0;
+  }
+
   .cta-group,
   .contact-links {
     flex-direction: column;
@@ -258,5 +468,12 @@ footer strong {
 
   .btn {
     text-align: center;
+  }
+
+  .floating-tg {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
   }
 }
